@@ -1,10 +1,24 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { ProductGrid } from "@/components/ui/shared/product-grid";
+import type { Product } from "@/types/product";
+import productsData from "@/app/data/products.json";
 
 export default function Home() {
+  const products: Product[] = productsData;
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start"></main>
+    <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
+      <main className="container mx-auto px-4 py-8">
+        <div className="mb-8">
+          <h1 className="mb-2 text-4xl font-bold tracking-tight">
+            Camera Rental
+          </h1>
+          <p className="text-muted-foreground">
+            Browse our collection of {products.length} professional cameras
+          </p>
+        </div>
+
+        <ProductGrid products={products} itemsPerPage={20} />
+      </main>
     </div>
   );
 }
