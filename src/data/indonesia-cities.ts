@@ -1,0 +1,26 @@
+export const INDONESIA_CITIES = [
+  "Jakarta",
+  "Surabaya",
+  "Bandung",
+  "Medan",
+  "Semarang",
+  "Makassar",
+  "Palembang",
+  "Tangerang",
+  "Depok",
+  "Bekasi",
+  "Bogor",
+  "Batam",
+  "Denpasar",
+  "Yogyakarta",
+  "Malang",
+  "Bandar Lampung",
+  "Padang",
+  "Banjarmasin",
+  "Pontianak",
+  "Manado",
+  "Samarinda",
+  "Balikpapan",
+] as const;
+
+export type IndonesiaCity = (typeof INDONESIA_CITIES)[number];
