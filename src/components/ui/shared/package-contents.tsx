@@ -55,9 +55,7 @@ export function PackageContents({ product }: PackageContentsProps) {
         {components.map((component) => {
           const imageFilename =
             component.product.image?.image || "_default.jpg";
-          const imageSrc = require(
-            `@/assets/product-images/${imageFilename}`,
-          ).default;
+          const imageSrc = `/images/products/${imageFilename}`;
 
           return (
             <div

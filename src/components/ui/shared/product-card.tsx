@@ -18,8 +18,8 @@ export function ProductCard({ product }: ProductCardProps) {
   // Get the first product image filename
   const imageFilename = getProductImage(product);
 
-  // Dynamically require the image from local assets
-  const imageSrc = require(`@/assets/product-images/${imageFilename}`).default;
+  // Use public folder path for production compatibility
+  const imageSrc = `/images/products/${imageFilename}`;
 
   return (
     <Link href={`/products/${product.id}`} className="block h-full">

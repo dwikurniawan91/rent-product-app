@@ -24,9 +24,7 @@ export function ProductImageGallery({
   }
 
   const selectedImage = images[selectedImageIndex];
-  const imageSrc = require(
-    `@/assets/product-images/${selectedImage.image}`,
-  ).default;
+  const imageSrc = `/images/products/${selectedImage.image}`;
 
   return (
     <div className="space-y-4">
@@ -46,9 +44,7 @@ export function ProductImageGallery({
       {images.length > 1 && (
         <div className="grid grid-cols-6 gap-2">
           {images.map((image, index) => {
-            const thumbSrc = require(
-              `@/assets/product-images/${image.image}`,
-            ).default;
+            const thumbSrc = `/images/products/${image.image}`;
             return (
               <button
                 key={image.id}
